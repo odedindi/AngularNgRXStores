@@ -1,0 +1,40 @@
+.todo {
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+
+  &.checked {
+    background: #315632;
+    color: #fff;
+    text-decoration: line-through;
+  }
+}
+
+.theadIcon {
+  height: 20px;
+}
+.check {
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  fill: transparent;
+
+  &.checked {
+    fill: #315632;
+  }
+  &:hover {
+    fill: #315632;
+    transform: scale(1.5);
+  }
+}
+.trashCan {
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    fill: #981414;
+    transform: scale(1.5);
+  }
+}

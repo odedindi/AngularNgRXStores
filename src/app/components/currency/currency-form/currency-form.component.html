@@ -1,0 +1,62 @@
+<app-accordion title="New Currency">
+  <form [formGroup]="form" novalidate>
+    <section class="form-group form-floating mb-2">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Currency Name"
+        required
+        #name
+      />
+      <label [for]="name" class="col-md-4">Name</label>
+      <section
+        *ngIf="
+          form.controls['name'].invalid &&
+          (form.controls['name'].dirty || form.controls['name'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <span *ngIf="form.controls['name'].errors"> Name is required. </span>
+      </section>
+    </section>
+    <section class="form-group form-floating mb-2">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="value"
+        placeholder="Currency Value"
+        #value
+        min="0"
+        numbersOnly
+        required
+      />
+      <label [for]="value" class="col-md-4">Value</label>
+      <section
+        *ngIf="
+          form.controls['value'].invalid &&
+          (form.controls['value'].dirty || form.controls['value'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <span *ngIf="form.controls['value'].errors"> Value is required. </span>
+      </section>
+    </section>
+
+    <button
+      (click)="addCurrency(form.value.name, form.value.value!)"
+      [disabled]="form.pristine || form.invalid"
+      class="btn btn-primary"
+      style="width: 100%; padding: 0.5rem"
+    >
+      Add Currency
+    </button>
+    <button
+      class="btn btn-danger"
+      style="width: 100%; padding: 0.5rem"
+      (click)="reset()"
+    >
+      Remove All Currencies
+    </button>
+  </form>
+</app-accordion>

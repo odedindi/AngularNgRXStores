@@ -1,0 +1,35 @@
+<section class="card p-2 m-2">
+  <h5 class="card-header text-center p-2" style="background-color: transparent">
+    Currencies
+  </h5>
+  <app-currency-form></app-currency-form>
+  <section class="card-body">
+    <table class="table table-hover table-striped table-bordered text-center">
+      <caption>
+        List of Currencies
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Currency Name</th>
+          <th scope="col">Currency Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let currency of currencies$ | async; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ currency.name }}</td>
+          <td>{{ currency.value }}</td>
+          <li class="list-group-item">
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Delete"
+              (click)="removeCurrency(currency)"
+            ></button>
+          </li>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
