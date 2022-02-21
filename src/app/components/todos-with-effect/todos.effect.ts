@@ -22,7 +22,6 @@ export class TodosEffect {
           .addTodo(title)
           .pipe(map((todo) => todosStore.actions.addTodoSuccess({ todo })))
       ),
-      tap((v) => console.log('addTodo$ effect: ', v)),
       catchError((err) => of(todosStore.actions.addTodoError({ err })))
     )
   );
@@ -43,7 +42,6 @@ export class TodosEffect {
   public removeTodo$ = createEffect(() =>
     this.actions$.pipe(
       ofType(todosStore.actions.removeTodo),
-      tap((v) => console.log('removeTodo$ effect: ', v)),
       exhaustMap(({ id }) =>
         this.todosService
           .removeTodo(id)
@@ -61,7 +59,6 @@ export class TodosEffect {
           .toggleTodo(todo)
           .pipe(map((todo) => todosStore.actions.toggleTodoSuccess({ todo })))
       ),
-      tap((v) => console.log('toggleTodo$ effect: ', v)),
       catchError((err) => of(todosStore.actions.toggleTodoError({ err })))
     )
   );
@@ -74,7 +71,6 @@ export class TodosEffect {
           .updateTodo(todo)
           .pipe(map((todo) => todosStore.actions.updateTodoSuccess({ todo })))
       ),
-      tap((v) => console.log('updateTodo$ effect: ', v)),
       catchError((err) => of(todosStore.actions.updateTodoError({ err })))
     )
   );

@@ -3,6 +3,8 @@
 4 examples of NgRx stores, either global or local. 
 As well as some practice with custom directives, services and shared modules.
 
+Can be seen live [here](https://angular-stores.vercel.app/).
+
 1. Simple Counter.
 <img src='https://github.com/odedindi/AngularNgRXStores/blob/main/src/assets/screenshots/simpleCounter.png' alt='counter' height='250px'>
 2. Currency Comparison List.
