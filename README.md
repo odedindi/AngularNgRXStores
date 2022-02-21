@@ -4,9 +4,13 @@
 As well as some practice with custom directives, services and shared modules.
 
 1. Simple Counter.
+<img src='https://github.com/odedindi/AngularNgRXStores/blob/main/src/assets/screenshots/simpleCounter.png' alt='counter' height='250px'>
 2. Currency Comparison List.
+<img src='https://github.com/odedindi/AngularNgRXStores/blob/main/src/assets/screenshots/currencyComparison.png' alt='counter' height='400px'>
 3. Game Score Board.
+<img src='https://github.com/odedindi/AngularNgRXStores/blob/main/src/assets/screenshots/gameScoreBoard.png' alt='counter' height='400px'>
 4. Todo app, utilizing NgRx Effects.
+<img src='https://github.com/odedindi/AngularNgRXStores/blob/main/src/assets/screenshots/todoApp.png' alt='counter' height='600px'>
 ## Setup
 
 This is a [Angular](https://angular.io/) project with
